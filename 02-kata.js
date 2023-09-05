@@ -14,13 +14,24 @@ TODO:
     - esto siempre va a dar el restante de la division pero no siempre va a dividir por el numero de parametro
 */
 
-
 function isPrime(num) {
     //TODO
 
-    if(num > 0) {
-        console.log("valor positivo");
-    } else {
-        console.error("Solo se aceptan valores positivos")
+    // si son menores a 1 o iguales no pueden ser primos.
+    if(num <= 1 ) return false;
+
+    // si es divisible por el indice 2, no es primo porque este solo se puede dividir por 1 y por si mismo
+    for(let i = 2; i < num; i++) {
+        if( num % i === 0) return false;
     }
+
+    // si pasa la comprobacion anterior, es primo.
+    return true;
 }
+
+console.log(isPrime(0));
+console.log(isPrime(1));
+console.log(isPrime(2));
+console.log(isPrime(73));
+console.log(isPrime(75));
+console.log(isPrime(-1));
