@@ -35,3 +35,20 @@ console.log(isPrime(2));
 console.log(isPrime(73));
 console.log(isPrime(75));
 console.log(isPrime(-1));
+
+/* 
+! En la kata el codigo funcionaba pero al mandar el test lo ponia como no  optimo. El siguiente codigo es optimizado: 
+
+function isPrime(num) {
+    if (num <= 1) return false;
+    if (num <= 3) return true;
+    if (num % 2 === 0 || num % 3 === 0) return false;
+
+    for (let i = 5; i * i <= num; i += 6) {
+        if (num % i === 0 || num % (i + 2) === 0) return false;
+    }
+
+    return true;
+}
+
+*/
